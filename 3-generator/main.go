@@ -20,7 +20,7 @@ func boring(msg string) <-chan string {
 		}
 
 		// The sender should close the channel
-		close(c)
+		defer close(c)
 
 	}()
 	return c // return a channel to caller.
